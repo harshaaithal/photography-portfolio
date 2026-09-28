@@ -651,7 +651,7 @@
       }
 
       .hero {
-        grid-template-columns: 1fr;
+        grid-template-columns: minmax(0, 1fr);
         gap: 2.5rem;
         width: calc(100% - 2rem);
         min-height: auto;
@@ -660,6 +660,7 @@
 
       .hero-content {
         min-width: 0;
+        width: 100%;
       }
 
       .hero h1 {
