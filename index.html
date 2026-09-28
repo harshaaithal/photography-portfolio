@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1eee6">
+  <meta name="description" content="Landscape, product, and travel photography by Harsha. A growing collection, edited one photograph at a time.">
+  <title>Harsha — Photography</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f1eee6;
+      --paper-deep: #e7e1d5;
+      --ink: #18211e;
+      --muted: #676b63;
+      --line: #c9c3b6;
+      --moss: #526756;
+      --rust: #a74f37;
+      --white: #faf9f5;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5rem;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--rust);
+      outline-offset: 5px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+
+    .skip-link {
+      position: absolute;
+      z-index: 10;
+      top: 1rem;
+      left: 1rem;
+      transform: translateY(-160%);
+      padding: .7rem 1rem;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      width: min(100% - 8vw, 1440px);
+      min-height: 84px;
+      margin-inline: auto;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+    }
+
+    .monogram {
+      display: grid;
+      width: 34px;
+      aspect-ratio: 1;
+      place-items: center;
+      border: 1px solid var(--ink);
+      border-radius: 50%;
+      font-family: var(--serif);
+      font-size: 1.05rem;
+    }
+
+    .wordmark-text {
+      font-size: .7rem;
+      font-weight: 650;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: clamp(.75rem, 2.2vw, 2rem);
+    }
+
+    .site-nav a {
+      padding-block: .5rem;
+      color: var(--muted);
+      font-size: .69rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 160ms ease;
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      color: var(--rust);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(300px, .8fr);
+      align-items: center;
+      gap: clamp(2rem, 7vw, 7rem);
+      width: min(100% - 12vw, 1320px);
+      min-height: min(780px, calc(100svh - 84px));
+      margin-inline: auto;
+      padding-block: clamp(3.75rem, 8vw, 7.5rem);
+    }
+
+    .eyebrow,
+    .section-index,
+    .image-label,
+    .image-file,
+    .hero-note,
+    .footer-meta {
+      font-size: .65rem;
+      font-weight: 650;
+      letter-spacing: .15em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      color: var(--rust);
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    .hero h1 {
+      max-width: 720px;
+      margin-block: 1.6rem 1.35rem;
+      font-family: var(--serif);
+      font-size: clamp(3.5rem, 7.2vw, 7.25rem);
+      font-weight: 400;
+      letter-spacing: -.065em;
+      line-height: .94;
+    }
+
+    .hero h1 em {
+      color: var(--moss);
+      font-weight: 400;
+    }
+
+    .hero-copy {
+      max-width: 460px;
+      margin-bottom: 2rem;
+      color: var(--muted);
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      line-height: 1.7;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: .8rem;
+      min-height: 42px;
+      color: var(--ink);
+      font-size: .75rem;
+      font-weight: 650;
+      letter-spacing: .1em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .text-link--primary {
+      padding: .7rem 1rem;
+      background: var(--ink);
+      color: var(--white);
+      transition: background 160ms ease, transform 160ms ease;
+    }
+
+    .text-link--primary:hover {
+      transform: translateY(-2px);
+      background: var(--moss);
+    }
+
+    .text-link--quiet {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .text-link .arrow {
+      font-size: 1rem;
+      transition: transform 160ms ease;
+    }
+
+    .text-link:hover .arrow {
+      transform: translateX(3px);
+    }
+
+    .hero-figure {
+      position: relative;
+      width: 100%;
+      max-width: 520px;
+      justify-self: end;
+      margin: 0;
+    }
+
+    .hero-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-deep);
+      aspect-ratio: .82;
+    }
+
+    .hero-image-wrap::after,
+    .photo-image-wrap::after {
+      position: absolute;
+      inset: 42% 0 0;
+      background: linear-gradient(180deg, transparent, rgba(11, 19, 17, .55));
+      content: "";
+      pointer-events: none;
+    }
+
+    .hero-image-wrap img,
+    .photo-image-wrap img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 500ms cubic-bezier(.2, .7, .3, 1);
+    }
+
+    .hero-figure:hover img,
+    .photo-card:hover img {
+      transform: scale(1.025);
+    }
+
+    .image-label {
+      position: absolute;
+      z-index: 1;
+      top: 1rem;
+      left: 1rem;
+      padding: .45rem .6rem;
+      background: var(--paper);
+      color: var(--ink);
+      font-size: .57rem;
+    }
+
+    .hero-caption {
+      position: absolute;
+      z-index: 1;
+      right: 1.2rem;
+      bottom: 1.15rem;
+      left: 1.2rem;
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1rem;
+      color: white;
+    }
+
+    .hero-caption strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+    }
+
+    .hero-caption span {
+      font-size: .6rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .hero-note {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: .75rem;
+      color: var(--muted);
+      font-size: .58rem;
+    }
+
+    .intro-band {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.2rem 6vw;
+      border-block: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .intro-band p {
+      margin: 0;
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .14em;
+      line-height: 1.6;
+      text-transform: uppercase;
+    }
+
+    .intro-band p:last-child {
+      color: var(--rust);
+      text-align: right;
+    }
+
+    .work-section {
+      padding: clamp(4.5rem, 9vw, 8.5rem) 6vw;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-inner {
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: 1fr minmax(230px, .5fr);
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .section-index {
+      display: block;
+      margin-bottom: .8rem;
+      color: var(--rust);
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5vw, 5.6rem);
+      font-weight: 400;
+      letter-spacing: -.06em;
+      line-height: .96;
+    }
+
+    .section-heading p {
+      max-width: 360px;
+      justify-self: end;
+      margin-bottom: .25rem;
+      color: var(--muted);
+      font-size: .95rem;
+      line-height: 1.7;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: clamp(1rem, 2.2vw, 2rem);
+    }
+
+    .photo-card {
+      grid-column: span 6;
+      min-width: 0;
+      margin: 0;
+    }
+
+    .photo-card:first-child {
+      grid-column: span 12;
+    }
+
+    .gallery-grid--landscape .photo-card:first-child {
+      grid-column: span 7;
+    }
+
+    .gallery-grid--landscape .photo-card:nth-child(2) {
+      grid-column: span 5;
+    }
+
+    .photo-image-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--paper-deep);
+      aspect-ratio: 4 / 3;
+    }
+
+    .photo-card:first-child .photo-image-wrap {
+      aspect-ratio: 1.85;
+    }
+
+    .gallery-grid--landscape .photo-card .photo-image-wrap {
+      aspect-ratio: 1.1;
+    }
+
+    .gallery-grid--landscape .photo-card:first-child .photo-image-wrap {
+      aspect-ratio: .96;
+    }
+
+    .photo-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: .7rem;
+      color: var(--muted);
+    }
+
+    .photo-caption span {
+      font-size: .63rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .photo-caption .image-file {
+      font-size: .58rem;
+      font-weight: 500;
+      letter-spacing: .06em;
+      text-align: right;
+      text-transform: none;
+    }
+
+    .section-product {
+      background: var(--white);
+    }
+
+    .section-travel {
+      background: var(--paper-deep);
+    }
+
+    .about-section {
+      padding: clamp(4.5rem, 10vw, 9rem) 6vw;
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: minmax(170px, .55fr) 1fr;
+      gap: clamp(2rem, 9vw, 9rem);
+      width: min(100%, 1120px);
+      margin-inline: auto;
+    }
+
+    .about-label {
+      color: #c88269;
+    }
+
+    .about-monogram {
+      display: grid;
+      width: clamp(110px, 16vw, 190px);
+      aspect-ratio: 1;
+      margin-top: 1.5rem;
+      place-items: center;
+      border: 1px solid rgba(250, 249, 245, .38);
+      border-radius: 50%;
+      color: #c88269;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 5vw, 5.5rem);
+    }
+
+    .about-copy h2 {
+      max-width: 680px;
+      margin-bottom: 1.5rem;
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 5.5vw, 5.7rem);
+      font-weight: 400;
+      letter-spacing: -.06em;
+      line-height: .98;
+    }
+
+    .about-copy p {
+      max-width: 620px;
+      margin-bottom: 1rem;
+      color: rgba(250, 249, 245, .73);
+      font-size: clamp(1rem, 1.5vw, 1.12rem);
+      line-height: 1.85;
+    }
+
+    .about-signoff {
+      margin-top: 2rem;
+      color: #c88269;
+      font-family: var(--serif);
+      font-size: 1.6rem;
+      font-style: italic;
+    }
+
+    .contact-section {
+      padding: clamp(4.5rem, 9vw, 8rem) 6vw;
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr minmax(240px, .55fr);
+      align-items: end;
+      gap: 2rem;
+      width: min(100%, 1320px);
+      margin-inline: auto;
+    }
+
+    .contact-section h2 {
+      max-width: 700px;
+      margin-block: .6rem 1rem;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.4vw, 6.5rem);
+      font-weight: 400;
+      letter-spacing: -.07em;
+      line-height: .95;
+    }
+
+    .contact-copy {
+      max-width: 460px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .contact-card {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+    }
+
+    .contact-card p {
+      margin-bottom: .9rem;
+      color: var(--muted);
+      font-size: .74rem;
+      line-height: 1.6;
+    }
+
+    .contact-email {
+      display: inline-block;
+      margin-bottom: .8rem;
+      color: var(--rust);
+      font-family: var(--serif);
+      font-size: clamp(1.15rem, 2.2vw, 1.75rem);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
+
+    .contact-hint {
+      display: block;
+      color: var(--muted);
+      font-size: .6rem;
+      letter-spacing: .08em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
+    .site-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.3rem 6vw;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    .footer-meta {
+      font-size: .56rem;
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr);
+        width: min(100% - 9vw, 760px);
+        gap: 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.35rem, 8vw, 5.5rem);
+      }
+
+      .intro-band {
+        padding-inline: 4.5vw;
+      }
+
+      .work-section,
+      .about-section,
+      .contact-section {
+        padding-inline: 4.5vw;
+      }
+    }
+
+    @media (max-width: 680px) {
+      html {
+        scroll-padding-top: 1rem;
+      }
+
+      .site-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .75rem;
+        width: calc(100% - 2rem);
+        min-height: auto;
+        padding-block: 1rem .8rem;
+      }
+
+      .site-nav {
+        width: 100%;
+        justify-content: space-between;
+        gap: .25rem;
+      }
+
+      .site-nav a {
+        padding-block: .35rem;
+        font-size: .58rem;
+        letter-spacing: .07em;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+        width: calc(100% - 2rem);
+        min-height: auto;
+        padding-block: 3.4rem 3rem;
+      }
+
+      .hero h1 {
+        max-width: 520px;
+        margin-top: 1.3rem;
+        font-size: clamp(3.4rem, 15vw, 5.5rem);
+      }
+
+      .hero-copy {
+        max-width: 400px;
+        font-size: 1rem;
+      }
+
+      .hero-figure {
+        max-width: none;
+      }
+
+      .hero-image-wrap {
+        aspect-ratio: 1.05;
+      }
+
+      .hero-note {
+        flex-direction: column;
+        gap: .25rem;
+      }
+
+      .intro-band {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .35rem;
+        padding: .9rem 1rem;
+      }
+
+      .intro-band p:last-child {
+        text-align: left;
+      }
+
+      .work-section,
+      .about-section,
+      .contact-section {
+        padding: 4rem 1rem;
+      }
+
+      .section-heading {
+        grid-template-columns: 1fr;
+        gap: .9rem;
+        margin-bottom: 1.7rem;
+      }
+
+      .section-heading h2 {
+        font-size: clamp(3rem, 13vw, 4.6rem);
+      }
+
+      .section-heading p {
+        justify-self: start;
+        font-size: .9rem;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .photo-card,
+      .photo-card:first-child,
+      .gallery-grid--landscape .photo-card:first-child,
+      .gallery-grid--landscape .photo-card:nth-child(2) {
+        grid-column: 1;
+      }
+
+      .photo-card:first-child .photo-image-wrap,
+      .gallery-grid--landscape .photo-card .photo-image-wrap,
+      .gallery-grid--landscape .photo-card:first-child .photo-image-wrap {
+        aspect-ratio: 1.18;
+      }
+
+      .photo-caption {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: .1rem;
+        padding-top: .55rem;
+      }
+
+      .photo-caption .image-file {
+        text-align: left;
+      }
+
+      .about-inner,
+      .contact-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .about-monogram {
+        width: 94px;
+        margin-top: 1rem;
+      }
+
+      .about-copy h2,
+      .contact-section h2 {
+        font-size: clamp(3.1rem, 13vw, 4.8rem);
+      }
+
+      .contact-card {
+        padding: 1.15rem;
+      }
+
+      .site-footer {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 1rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <a class="wordmark" href="#top" aria-label="Harsha photography, back to top">
+      <span class="monogram" aria-hidden="true">H</span>
+      <span class="wordmark-text">Harsha / Photography</span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="#landscape">Landscape</a>
+      <a href="#product">Product</a>
+      <a href="#travel">Travel</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-content">
+        <p class="eyebrow">A growing photographic journal</p>
+        <h1 id="hero-title">Look closely.<br>Let each frame <em>lead.</em></h1>
+        <p class="hero-copy">Landscape, product, and travel photography by Harsha. A growing collection, edited one photograph at a time.</p>
+        <div class="hero-links">
+          <a class="text-link text-link--primary" href="#landscape">Explore the work <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="text-link text-link--quiet" href="#about">The approach</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <div class="hero-image-wrap">
+          <img src="images/landscape-hero.jpg" alt="Temporary sample photograph of a forest landscape">
+          <span class="image-label">Sample image · replace me</span>
+          <div class="hero-caption">
+            <strong>Landscape</strong>
+            <span>Preview frame / 01</span>
+          </div>
+        </div>
+        <div class="hero-note">
+          <span>Image slot: images/landscape-hero.jpg</span>
+          <span>Temporary Unsplash sample</span>
+        </div>
+      </figure>
+    </section>
+
+    <div class="intro-band" aria-label="Portfolio categories">
+      <p>Landscape / Product / Travel</p>
+      <p>Three subjects, no single preset</p>
+    </div>
+
+    <section class="work-section section-landscape" id="landscape" aria-labelledby="landscape-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">01 / Landscape</span>
+            <h2 id="landscape-title">Room to breathe.</h2>
+          </div>
+          <p>Open skies, changing light, and the small details that make a place stay with you.</p>
+        </div>
+        <div class="gallery-grid gallery-grid--landscape">
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/landscape-01.jpg" alt="Temporary sample photograph of an alpine lake">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Landscape / Sample 01</span>
+              <span class="image-file">Replace images/landscape-01.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/landscape-02.jpg" alt="Temporary sample photograph of a misty mountain lake">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Landscape / Sample 02</span>
+              <span class="image-file">Replace images/landscape-02.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/landscape-03.jpg" alt="Temporary sample photograph of a mountain valley">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Landscape / Sample 03</span>
+              <span class="image-file">Replace images/landscape-03.jpg</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-section section-product" id="product" aria-labelledby="product-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">02 / Product</span>
+            <h2 id="product-title">Objects, considered.</h2>
+          </div>
+          <p>Shape, material, and quiet details seen up close. A place for thoughtful still-life studies.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/product-01.jpg" alt="Temporary sample still life of a cosmetic product and flowers">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Product / Sample 01</span>
+              <span class="image-file">Replace images/product-01.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/product-02.jpg" alt="Temporary sample still life of skincare packaging">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Product / Sample 02</span>
+              <span class="image-file">Replace images/product-02.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/product-03.jpg" alt="Temporary sample photograph of a product arrangement">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Product / Sample 03</span>
+              <span class="image-file">Replace images/product-03.jpg</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-section section-travel" id="travel" aria-labelledby="travel-title">
+      <div class="section-inner">
+        <div class="section-heading">
+          <div>
+            <span class="section-index">03 / Travel</span>
+            <h2 id="travel-title">Notes from elsewhere.</h2>
+          </div>
+          <p>A visual diary from the road, attentive to the feeling of a place as much as its landmarks.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/travel-01.jpg" alt="Temporary sample photograph of a desert road">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Travel / Sample 01</span>
+              <span class="image-file">Replace images/travel-01.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/travel-02.jpg" alt="Temporary sample travel photograph of a balloon-filled sky">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Travel / Sample 02</span>
+              <span class="image-file">Replace images/travel-02.jpg</span>
+            </figcaption>
+          </figure>
+          <figure class="photo-card">
+            <div class="photo-image-wrap">
+              <img src="images/travel-03.jpg" alt="Temporary sample travel photograph of a city street at dusk">
+              <span class="image-label">Sample image</span>
+            </div>
+            <figcaption class="photo-caption">
+              <span>Travel / Sample 03</span>
+              <span class="image-file">Replace images/travel-03.jpg</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about" aria-labelledby="about-title">
+      <div class="about-inner">
+        <div>
+          <span class="section-index about-label">A little about me</span>
+          <div class="about-monogram" aria-hidden="true">H.</div>
+        </div>
+        <div class="about-copy">
+          <h2 id="about-title">The photograph sets the direction.</h2>
+          <p>I’m Harsha, drawn to the scale of a landscape, the shape of an object, and the feeling of moving through a place.</p>
+          <p>In Lightroom, I try to listen to each frame first. Its light, color, and mood guide the edit. I’m not looking for one preset to make every photograph feel the same.</p>
+          <p>This is a growing collection of work and a record of learning to see a little more clearly.</p>
+          <div class="about-signoff">Thanks for looking.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="contact-inner">
+        <div>
+          <span class="section-index">04 / Contact</span>
+          <h2 id="contact-title">Let’s start with a frame.</h2>
+          <p class="contact-copy">For a collaboration, a print enquiry, or just to talk photography, send a note.</p>
+        </div>
+        <div class="contact-card">
+          <p>Contact email</p>
+          <a class="contact-email" href="mailto:your@email.com?subject=Photography%20enquiry">your@email.com ↗</a>
+          <span class="contact-hint">Sample address — replace before sharing</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p class="footer-meta">© 2026 Harsha · Portfolio in progress</p>
+    <p class="footer-meta">Temporary Unsplash images · Replace with your own photographs</p>
+  </footer>
+</body>
+</html>
